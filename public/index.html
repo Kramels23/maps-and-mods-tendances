@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CurseForge Trends - Mods & Maps</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        h1 { color: #4CAF50; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 10px; border-bottom: 1px solid #ddd; }
+        a { text-decoration: none; color: #333; font-weight: bold; }
+    </style>
+    <script>
+        async function fetchData(endpoint, listId) {
+            try {
+                let response = await fetch(`http://localhost:3000/${endpoint}`);
+                let data = await response.json();
+                let mods = data.data;
+                let list = document.getElementById(listId);
+                list.innerHTML = "";
+                mods.forEach(mod => {
+                    let item = document.createElement("li");
+                    item.innerHTML = `<a href="${mod.websiteUrl}" target="_blank">${mod.name}</a>`;
+                    list.appendChild(item);
+                });
+            } catch (error) {
+                console.error("Erreur API:", error);
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchData("mods", "modsList");
+            fetchData("maps", "mapsList");
+        });
+    </script>
+</head>
+<body>
+<h1>Top 50 Mods Minecraft</h1>
+<ul id="modsList">Chargement...</ul>
+
+<h1>Top 50 Maps Minecraft</h1>
+<ul id="mapsList">Chargement...</ul>
+</body>
+</html>
