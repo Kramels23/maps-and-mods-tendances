@@ -1,0 +1,107 @@
+/* 🌙 Background global */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #181818;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 🌟 Navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    background: #222;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.navbar button {
+    margin: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    border: none;
+    background: #ff6600;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+.navbar button:hover {
+    background: #ff4500;
+}
+.active {
+    background: #cc5500;
+}
+
+/* 🔥 Titre */
+h1 {
+    color: #ff6600;
+    font-size: 28px;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/* 📌 Cards container */
+ul {
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* 🎴 Card design */
+li {
+    background: #262626;
+    border-radius: 10px;
+    width: 180px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 102, 0, 0.4);
+}
+
+/* 🖼️ Image */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* 🔠 Texte dans la card */
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+.card-info {
+    font-size: 12px;
+    color: #aaaaaa;
+}
+.card-info i {
+    color: #ff6600;
+}
+/* 🔗 Supprimer le soulignement et le bleu des liens */
+a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: white; /* Garde la couleur du texte normale */
+}
+a:hover {
+    color: #ff6600; /* Change la couleur au survol */
+}
+
+/* 🔥 Mise en avant du nombre de téléchargements */
+.card-info .downloads {
+    font-weight: bold;
+    color: #ff6600; /* Couleur orange */
+}
